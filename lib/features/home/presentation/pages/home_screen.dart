@@ -1,10 +1,12 @@
 import 'package:figner_print_auth/core/utils/constants/styles.dart';
 import 'package:figner_print_auth/core/utils/resources/assets.dart';
+import 'package:figner_print_auth/core/utils/resources/color_manager.dart';
 import 'package:figner_print_auth/core/widgets/custom_carusol.dart';
 import 'package:figner_print_auth/features/home/presentation/manager/categories_cubit/categories_cubit.dart';
 import 'package:figner_print_auth/features/home/presentation/manager/categories_cubit/categories_state.dart';
 import 'package:figner_print_auth/features/home/presentation/manager/popular_jokes_cubit/popular_jokes_cubit.dart';
 import 'package:figner_print_auth/features/home/presentation/manager/popular_jokes_cubit/popular_jokes_state.dart';
+import 'package:figner_print_auth/features/home/presentation/widgets/joke_modal_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -53,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     if (state is CategoriesLoading) {
                       return const Center(
                           child: CircularProgressIndicator(
-                        color: Colors.green,
+                        color: ColorManager.mainColor,
                       ));
                     } else if (state is CategoriesFailure) {
                       return Center(child: Text(state.errMessage));

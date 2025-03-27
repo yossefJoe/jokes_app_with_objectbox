@@ -1,5 +1,6 @@
 import 'package:figner_print_auth/core/utils/constants/styles.dart';
 import 'package:figner_print_auth/core/utils/resources/app_router.dart';
+import 'package:figner_print_auth/core/utils/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -31,12 +32,12 @@ class _WelcomePageState extends State<WelcomePage> {
                   height: 50,
                   child: ElevatedButton(
                       onPressed: () {
-                       context.go(AppRouter.homeView);
+                       context.go(AppRouter.navbarview);
                       },
                       child: Text(
                         'Start The Fun',
                         style: Styles.textStyle20.copyWith(
-                          color: Colors.green,
+                          color: ColorManager.mainColor,
                         ),
                       )),
                 ),

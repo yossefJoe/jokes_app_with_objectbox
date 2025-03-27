@@ -1,3 +1,5 @@
+import 'package:figner_print_auth/features/profile/data/models/objectbox_model.dart';
+
 class JokesModel {
   String? category;
   String? type;

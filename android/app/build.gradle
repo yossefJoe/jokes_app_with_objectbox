@@ -27,7 +27,11 @@ android {
     namespace = "com.example.figner_print_auth"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
-
+     packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8

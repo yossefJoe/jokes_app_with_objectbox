@@ -33,4 +33,8 @@ class Assets {
   /// Assets for assetsImagesWelcome
   /// assets/images/smile.jpg
   static const String assetsImagesSmile = "assets/images/smile.jpg";
+
+  /// Assets for assetsImagesWelcome
+  /// assets/images/haveaniceday.webp
+  static const String assetsImagesHaveaniceday = "assets/images/smilyface.webp";
 }
