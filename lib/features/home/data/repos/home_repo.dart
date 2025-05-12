@@ -6,4 +6,5 @@ import 'package:figner_print_auth/features/home/data/models/jokes_model.dart';
 abstract class HomeRepo{
   Future<Either<Failure, CategoriesModel>> getCategories();
   Future<Either<Failure, List<JokesModel>>> getPopularJokes();
+  Future<Either<Failure, List<JokesModel>>> getJokesByCategory(String category,int amount);
 }

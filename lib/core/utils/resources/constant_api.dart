@@ -3,5 +3,5 @@ class ConstantApi {
 
   static const String categories = "${baseUrl}/categories";
   static const String popularJokes = "${baseUrl}/joke/Any";
-  static const String jokes = "${baseUrl}/";
+  static const String jokes = "${baseUrl}/joke/";
 }

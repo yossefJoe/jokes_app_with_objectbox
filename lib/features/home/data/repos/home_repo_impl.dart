@@ -54,4 +54,30 @@ class HomeRepoImpl implements HomeRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, List<JokesModel>>> getJokesByCategory(
+      String category,int amount) async{
+    try {
+      String endPoint =
+          '${ConstantApi.jokes}$category?amount=$amount'; // ✅ Ensure 'amount'
+      final data = await apiService.get(endPoint: endPoint);
+
+      print("API Response: $data"); // ✅ Debugging
+
+      if (data.containsKey('jokes') && data['jokes'] is List) {
+        // ✅ Convert "jokes" list correctly
+        return right((data['jokes'] as List)
+            .map((e) => JokesModel.fromJson(e as Map<String, dynamic>))
+            .toList());
+      }
+
+      return left(ServerFailure("Unexpected response format: $data"));
+    } catch (e) {
+      if (e is DioError) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
 }

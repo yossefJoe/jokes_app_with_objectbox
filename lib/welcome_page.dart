@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:figner_print_auth/core/utils/constants/styles.dart';
 import 'package:figner_print_auth/core/utils/resources/app_router.dart';
 import 'package:figner_print_auth/core/utils/resources/color_manager.dart';
@@ -12,6 +13,22 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  final AudioPlayer _audioPlayer = AudioPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    playStartupSound();
+  }
+
+  Future<void> playStartupSound() async {
+    try {
+      await _audioPlayer.play(AssetSource('sounds/smokin.mp3'));
+    } catch (e) {
+      print('Audio error: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +49,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   height: 50,
                   child: ElevatedButton(
                       onPressed: () {
-                       context.go(AppRouter.navbarview);
+                        context.go(AppRouter.navbarview);
                       },
                       child: Text(
                         'Start The Fun',

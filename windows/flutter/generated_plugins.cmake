@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  audioplayers_windows
   local_auth_windows
   objectbox_flutter_libs
   url_launcher_windows
